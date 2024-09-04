@@ -1,0 +1,14 @@
+﻿input, textarea {
+    font-family: $font-poppins;
+    font-size: 13px;
+    border: 1px solid $border-light;
+    color: $primary;
+    padding: 0.8rem 0 0.8rem 0.8rem;
+    border-radius: 3px;
+    resize: none;
+
+    &::placeholder {
+        color: $note-clr;
+        font-style: italic;
+    }
+}

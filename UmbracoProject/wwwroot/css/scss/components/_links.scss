@@ -1,0 +1,9 @@
+﻿.nav-link {
+    @include font-sub-title2;
+    color: $primary;
+    transition: 150ms ease-in-out;
+
+    &:hover {
+        color: $sub-clr;
+    }
+}

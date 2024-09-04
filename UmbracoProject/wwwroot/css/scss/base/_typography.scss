@@ -1,0 +1,74 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap');
+$font-poppins: 'Poppins', sans-serif;
+
+:root {
+    font-family: $font-poppins;
+}
+
+h1, .h1 {
+    @include font-heading1
+}
+
+h2, .h2 {
+    @include font-heading2
+}
+
+h3, .h3 {
+    @include font-heading3
+}
+
+h4, .h4 {
+    @include font-heading4
+}
+
+h5, .h5 {
+    @include font-heading5
+}
+
+h6, .h6 {
+    @include font-heading6
+}
+
+p {
+    @include font-body-text
+}
+
+.extension-title {
+    @include font-extension-title
+}
+
+.text-quote {
+    @include font-quote
+}
+
+.text-note1 {
+    @include font-note1
+}
+
+.text-note2 {
+    @include font-note2
+}
+
+.text-label {
+    @include font-label
+}
+
+.text-sub-title1 {
+    @include font-sub-title1
+}
+
+.text-sub-title2 {
+    @include font-sub-title2
+}
+
+.text-sub-title3 {
+    @include font-sub-title3
+}
+
+.text-sub-title4 {
+    @include font-sub-title4
+}
+
+.text-slide {
+    @include font-slide-text
+}

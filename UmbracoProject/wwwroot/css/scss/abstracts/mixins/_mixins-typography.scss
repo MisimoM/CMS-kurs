@@ -1,0 +1,95 @@
+﻿@mixin font-heading1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: $primary;
+}
+
+@mixin font-heading2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: $primary;
+}
+
+@mixin font-heading3 {
+    font-size: 30px;
+    font-weight: 700;
+    color: $primary;
+}
+
+@mixin font-heading4 {
+    font-size: 25px;
+    font-weight: 700;
+    color: $primary;
+}
+
+@mixin font-heading5 {
+    font-size: 22px;
+    font-weight: 600;
+    color: $primary;
+}
+
+@mixin font-heading6 {
+    font-size: 18px;
+    font-weight: 700;
+    color: $primary;
+}
+
+@mixin font-extension-title {
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 5rem;
+    color: $primary;
+}
+
+@mixin font-body-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: $base-text-clr;
+}
+
+@mixin font-note1 {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+@mixin font-note2 {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@mixin font-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: $sub-clr;
+}
+
+@mixin font-sub-title1 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@mixin font-sub-title2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+@mixin font-sub-title3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@mixin font-sub-title4 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@mixin font-slide-text {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@mixin font-quote {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+}

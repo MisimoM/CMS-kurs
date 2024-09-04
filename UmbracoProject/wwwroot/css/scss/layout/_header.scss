@@ -1,0 +1,63 @@
+﻿header {
+    background-color: $primary;
+
+    #top {
+        height: 3rem !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p, i {
+            color: $white;
+            @include font-note1;
+        }
+    }
+
+    .social-media {
+        display: flex;
+        height: 100%;
+
+        a {
+            padding: 0 1rem;
+            border-left: 1px solid #606966;
+            display: grid;
+            align-items: center;
+
+            &:last-child {
+                border-right: 1px solid #606966;
+            }
+
+            &:hover {
+                background-color: #606966;
+            }
+        }
+    }
+
+    .bottom-holder {
+        background-color: $white;
+    }
+
+    #bot {
+        padding: 1rem 0;
+        display: grid;
+        align-items: center;
+        grid-template-areas:
+            "logo nav search";
+
+        img {
+            grid-area: logo;
+        }
+
+        i {
+            color: $primary;
+            grid-area: search;
+            float: right;
+        }
+    }
+
+    nav {
+        display: flex;
+        gap: 5rem;
+        grid-area: nav;
+    }
+}

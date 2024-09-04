@@ -1,0 +1,9 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var className = Model.Content.Value<string>("className");
+    var buttonLabel = Model.Content.Value<string>("buttonLabel");
+}
+
+<button class="@className">@buttonLabel</button>

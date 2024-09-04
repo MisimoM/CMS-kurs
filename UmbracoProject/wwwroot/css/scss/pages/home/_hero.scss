@@ -1,0 +1,20 @@
+﻿.hero-section {
+    position: relative;
+    height: 552px;
+
+    img {
+        position: absolute;
+    }
+
+    .container {
+        display: grid;
+        align-items: center;
+    }
+
+    .content-holder {
+        
+        p {
+            padding: 2rem 0;
+        }
+    }
+}

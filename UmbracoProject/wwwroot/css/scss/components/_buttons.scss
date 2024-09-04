@@ -1,0 +1,7 @@
+﻿.button-dark {
+    @include btn($primary, $secondary, $secondary, $primary)
+}
+
+.button-light {
+    @include btn($secondary, $primary, $primary, $secondary)
+}

@@ -1,0 +1,15 @@
+﻿@mixin btn($bg-color, $text-color, $hover-bg-color, $hover-text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    font-family: $font-poppins;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: 3px;
+    transition: 150ms ease-in-out;
+
+    &:hover {
+        background-color: $hover-bg-color;
+        color: $hover-text-color;
+    }
+}
