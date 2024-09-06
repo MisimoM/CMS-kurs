@@ -13,3 +13,13 @@
         color: $hover-text-color;
     }
 }
+
+@mixin card {
+    background-color: $white;
+    border-radius: 3px;
+    max-width: 350px;
+
+    img {
+        width: 100%;
+    }
+}

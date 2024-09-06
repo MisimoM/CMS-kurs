@@ -1,0 +1,18 @@
+﻿.our-services-section {
+    background-color: $light-gray;
+
+    .container {
+        display: grid;
+        place-items: center;
+    }
+
+    .title-holder {
+        width: 50%;
+        text-align: center;
+    }
+
+    .grid-3col {
+        margin-top: 3rem;
+        gap: 2rem;
+    }
+}

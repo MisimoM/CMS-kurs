@@ -1,0 +1,155 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	
+	var heroImage = Model?.Value<IPublishedContent>("heroImage")?.Url() ?? "";
+    
+    var signatureImage = Model?.Value<IPublishedContent>("aboutUsSignatureImage")?.Url() ?? "";
+
+    var cardTitles = Model.Value<IEnumerable<string>>("ourServicesCardTitles");
+    var cardImages = Model.Value<IEnumerable<IPublishedContent>>("ourServicesCardImages");
+
+    var ourStoryBackgroundImage = Model?.Value<IPublishedContent>("ourStoryBackgroundImage")?.Url() ?? "";
+    var ourStoryImage = Model?.Value<IPublishedContent>("ourStoryImage")?.Url() ?? "";
+
+    var successBgImage = Model?.Value<IPublishedContent>("successStoryBackgroundImage")?.Url() ?? "";
+    var successImage = Model?.Value<IPublishedContent>("successStoryImage")?.Url() ?? "";
+    var successNumbers = Model.Value<IEnumerable<string>>("successStoryNumbers");
+    var successTexts = Model.Value<IEnumerable<string>>("successStoryTexts");
+
+    var carouselImages = Model.Value<IEnumerable<IPublishedContent>>("recentProjectsCarouselImages");
+    var companyImages = Model.Value<IEnumerable<IPublishedContent>>("recentProjectsCompanyImages");
+}
+
+<section class="hero-section">
+    <img class="hero-image" src="@heroImage">
+    <div class="container">
+        <div class="content-holder">
+            <h1 class="extension-title">@Model.Value("heroHeadline")</h1>
+            <p>@Model.Value("heroText")</p>
+            <a href="@Model.Value("heroButtonUrl")">
+                <button class="button-dark">@Model.Value("heroButtonText")</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="about-us-section">
+        <div class="container">
+            <div class="content-holder">
+                <div class="text-holder">
+                    <h6 class="text-label">@Model.Value("aboutUsLabel")</h6>
+                    <h2>@Model.Value("aboutUsHeadline")</h2>
+                </div>
+                <p class="text-quote">@Model.Value("aboutUsQuotation")</p>
+                <p>@Model.Value("aboutUsText")</p>
+                <img src="@signatureImage" alt="">
+                <p>@Model.Value("aboutUsSignatureText")</p>
+            </div>
+            <div class="form-holder">
+                <div class="form-title">
+                    <h3>@Model.Value("aboutUsFormTitle")</h3>
+                </div>
+                <div class="form-body">
+                    <form action="">
+                        <p>@Model.Value("aboutUsFormText")</p>
+                        <input type="text" placeholder="@Model.Value("aboutUsFormInputName")">
+                        <input type="text" placeholder="@Model.Value("aboutUsFormInputEmail")">
+                        <input type="text" placeholder="@Model.Value("aboutUsFormInputPhone")">
+                        <input type="text" placeholder="@Model.Value("aboutUsFormInputType")">
+                        <button class="button-light">@Model.Value("aboutUsFormButtonText")</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="our-services-section">
+        <div class="container">
+            <div class="title-holder">
+                <h6 class="text-label">@Model.Value("ourServicesLabel")</h6>
+                <h2>@Model.Value("ourServicesHeadline")</h2>
+            </div>
+            <div class="grid-3col">
+                @if (cardTitles != null && cardImages != null)
+                {
+                    @foreach (var (title, image) in cardTitles.Zip(cardImages, (title, image) => (title, image)))
+                    {
+                        <a href="#">
+                            <div class="card-service">
+                                <h5>@title</h5>
+                                <img src="@image.Url()" alt="@title">
+                                <p>@Model.Value("ourServicesCardText")</p>
+                            </div>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="our-story-section">
+        <div class="container">
+            <img class="bg-image" src="@ourStoryBackgroundImage" alt="">
+            <div class="content-holder">
+                <div>
+                    <h2>@Model.Value("ourStoryHeadlineTop")</h2>
+                    <h2><span>@Model.Value("ourStoryHeadlineBot")</span></h2>
+                </div>
+                <p>@Model.Value("ourStoryText").</p>
+                <button class="button-dark">@Model.Value("ourStoryButtonText")</button>
+            </div>
+            <img class="story-image" src="@ourStoryImage" alt="">
+        </div>
+    </section>
+
+    <section class="success-story-section">
+        <div class="container">
+            <img class="bg-image" src="@successBgImage" alt="">
+            <div class="title-holder">
+                <h6 class="text-label">SUCCESS STORIES</h6>
+                <h2>Success story</h2>
+            </div>
+            <div class="wrapper">
+                @if (successNumbers != null && successTexts != null)
+                {
+                    @foreach (var (number, text) in successNumbers.Zip(successTexts, (number, text) => (number, text)))
+                    {
+                        <div class="wrapper-item">
+                            <h3>@number</h3>
+                            <p class="font-sub-title1">@text</p>
+                        </div>
+                    }
+                }
+            </div>
+            <img class="success-image" src="@successImage" alt="">
+        </div>
+    </section>
+
+    <section class="recent-projects-section">
+        <div class="container">
+            <div class="title-holder">
+                <h6 class="text-label">OUR PROJECTS</h6>
+                <h2>Recent Projects</h2>
+            </div>
+        </div>
+        <div class="carousel">
+            @if (carouselImages != null)
+            {
+                @foreach (var image in carouselImages)
+                {
+                    <img src="@image.Url()" alt="">
+                }
+            }
+        </div>
+        <div class="container wrapper">
+            @if (companyImages != null)
+            {
+                @foreach (var image in companyImages)
+                {
+                    <img src="@image.Url()" alt="">
+                }
+            }
+        </div>
+    </section>

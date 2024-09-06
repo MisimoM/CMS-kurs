@@ -188,6 +188,34 @@ input::placeholder, textarea::placeholder {
   color: #D9C3A9;
 }
 
+.card-service {
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  max-width: 350px;
+  transition: 250ms ease-in-out;
+}
+.card-service img {
+  width: 100%;
+}
+.card-service h5, .card-service p {
+  padding: 1.5rem;
+}
+.card-service:hover {
+  box-shadow: 5px 5px 12px 0px rgb(209, 209, 209);
+}
+
+.card-team {
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  max-width: 350px;
+}
+.card-team img {
+  width: 100%;
+}
+.card-team .card-text-holder {
+  padding: 0.8rem 1.5rem;
+}
+
 .container {
   width: 100% !important;
   height: 100% !important;
@@ -256,6 +284,22 @@ input::placeholder, textarea::placeholder {
   }
 }
 
+section {
+  padding: 5rem 0;
+}
+
+.grid-3col {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4col {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+}
+
 footer {
   background-color: #0E0E0E;
 }
@@ -276,7 +320,7 @@ header #top {
   align-items: center;
 }
 header #top p, header #top i {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   font-size: 13px;
   font-weight: 400;
 }
@@ -322,16 +366,175 @@ header nav {
 .hero-section {
   position: relative;
   height: 552px;
+  padding: 0;
 }
-.hero-section img {
+.hero-section .hero-image {
   position: absolute;
 }
 .hero-section .container {
+  position: relative;
+  z-index: 2;
+  height: 100%;
   display: grid;
-  align-items: center;
 }
-.hero-section .content-holder p {
-  padding: 2rem 0;
+.hero-section .content-holder {
+  width: 45%;
+  display: grid;
+  gap: 2rem;
+  align-self: center;
+}
+.hero-section .content-holder button {
+  width: 30%;
+}
+
+.about-us-section {
+  background-color: #FFFFFF;
+  position: relative;
+}
+.about-us-section .content-holder {
+  width: 50%;
+  display: grid;
+  gap: 1rem;
+}
+.about-us-section .form-holder {
+  width: 20%;
+  position: absolute;
+  background-color: #FFFFFF;
+  top: -15%;
+  right: 22%;
+}
+.about-us-section .form-title {
+  background-color: #4F5955;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+.about-us-section .form-title h3 {
+  color: #F2EDDC;
+}
+.about-us-section .form-body {
+  position: relative;
+  z-index: 0;
+  box-shadow: 0px 0px 5px 2px rgb(238, 238, 238);
+}
+.about-us-section form {
+  display: grid;
+  width: 100%;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.our-services-section {
+  background-color: #F7F7F7;
+}
+.our-services-section .container {
+  display: grid;
+  place-items: center;
+}
+.our-services-section .title-holder {
+  width: 50%;
+  text-align: center;
+}
+.our-services-section .grid-3col {
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
+.our-story-section {
+  padding-bottom: 0;
+}
+.our-story-section .container {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.our-story-section .bg-image {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.our-story-section .content-holder {
+  text-align: center;
+  width: 50%;
+  display: grid;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+.our-story-section .content-holder button {
+  width: 28%;
+  place-self: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+.our-story-section .content-holder span {
+  color: #D9C3A9;
+}
+.our-story-section .story-image {
+  position: relative;
+  margin-top: 4rem;
+  z-index: 2;
+}
+
+.success-story-section {
+  background-color: #4F5955;
+  padding-bottom: 0;
+}
+.success-story-section .container {
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.success-story-section .bg-image {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.success-story-section h2, .success-story-section p {
+  color: #FFFFFF;
+}
+.success-story-section .wrapper {
+  display: flex;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+  margin-top: 2rem;
+}
+.success-story-section .wrapper h3 {
+  color: #D9C3A9;
+  font-size: 100px;
+}
+.success-story-section .wrapper-item {
+  width: 50%;
+  display: grid;
+}
+.success-story-section .wrapper-item p {
+  width: 80%;
+  place-self: center;
+}
+.success-story-section .success-image {
+  position: relative;
+  z-index: 2;
+  bottom: -20%;
+}
+
+.recent-projects-section {
+  padding-top: 10rem;
+}
+.recent-projects-section .carousel {
+  display: flex;
+  margin-top: 2rem;
+}
+.recent-projects-section .wrapper {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  margin-top: 5rem;
 }
 
 .umb-block-grid__layout-container {

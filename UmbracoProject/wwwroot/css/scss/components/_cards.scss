@@ -1,0 +1,20 @@
+﻿.card-service {
+    @include card;
+    transition: 250ms ease-in-out;
+
+    h5, p {
+        padding: 1.5rem;
+    }
+
+    &:hover {
+        box-shadow: 5px 5px 12px 0px rgba(209,209,209,1);
+    }
+}
+
+.card-team {
+    @include card;
+
+    .card-text-holder {
+        padding: 0.8rem 1.5rem;
+    }
+}

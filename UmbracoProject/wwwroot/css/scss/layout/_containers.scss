@@ -3,5 +3,9 @@
 }
 
 .container-center {
-    @include container-center
+    @include container-center;
+}
+
+section {
+    padding: 5rem 0;
 }

@@ -1,0 +1,42 @@
+﻿.about-us-section {
+    background-color: $white;
+    position: relative;
+
+    .content-holder {
+        width: 50%;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .form-holder {
+        width: 20%;
+        position: absolute;
+        background-color: $white;
+        top: -15%;
+        right: 22%;
+    }
+
+    .form-title {
+        background-color: $primary;
+        padding: 1.5rem;
+        position: relative;
+        z-index: 1;
+
+        h3 {
+            color: $secondary;
+        }
+    }
+
+    .form-body {
+        position: relative;
+        z-index: 0;
+        box-shadow: 0px 0px 5px 2px rgb(238, 238, 238);
+    }
+
+    form {
+        display: grid;
+        width: 100%;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+}

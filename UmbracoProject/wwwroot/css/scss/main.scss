@@ -9,12 +9,19 @@
 @import "components/buttons";
 @import "components/forms";
 @import "components/links";
+@import "components/cards";
 
 @import "layout/containers";
+@import "layout/grids";
 @import "layout/footer";
 @import "layout/header";
 
 @import "pages/home/hero";
+@import "pages/home/about-us";
+@import "pages/home/our-services";
+@import "pages/home/our-story";
+@import "pages/home/success-story";
+@import "pages/home/recent-projects";
 
 @import "vendors/umbraco-overrides";
 

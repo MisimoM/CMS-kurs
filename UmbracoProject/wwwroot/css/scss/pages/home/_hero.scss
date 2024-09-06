@@ -1,20 +1,27 @@
 ﻿.hero-section {
     position: relative;
     height: 552px;
+    padding: 0;
 
-    img {
+    .hero-image {
         position: absolute;
     }
 
     .container {
+        position: relative;
+        z-index: 2;
+        height: 100%;
         display: grid;
-        align-items: center;
     }
 
     .content-holder {
-        
-        p {
-            padding: 2rem 0;
+        width: 45%;
+        display: grid;
+        gap: 2rem;
+        align-self: center;
+
+        button {
+            width: 30%;
         }
     }
 }

@@ -1,0 +1,52 @@
+﻿.success-story-section {
+    background-color: $primary;
+    padding-bottom: 0;
+
+    .container {
+        position: relative;
+        display: grid;
+        place-items: center;
+        text-align: center;
+    }
+
+    .bg-image {
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    h2, p {
+        color: $white;
+    }
+
+    .wrapper {
+        display: flex;
+        gap: 4rem;
+        position: relative;
+        z-index: 2;
+        margin-top: 2rem;
+
+        h3 {
+            color: $sub-clr;
+            font-size: 100px;
+        }
+    }
+
+    .wrapper-item {
+        width: 50%;
+        display: grid;
+
+        p {
+            width: 80%;
+            place-self: center;
+        }
+    }
+
+    .success-image {
+        position: relative;
+        z-index: 2;
+        bottom: -20%;
+    }
+}

@@ -1,0 +1,42 @@
+﻿.our-story-section {
+    padding-bottom: 0;
+
+    .container {
+        position: relative;
+        display: grid;
+        place-items: center;
+    }
+
+    .bg-image {
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .content-holder {
+        text-align: center;
+        width: 50%;
+        display: grid;
+        gap: 2rem;
+        position: relative;
+        z-index: 2;
+
+        button {
+            width: 28%;
+            place-self: center;
+            @include font-sub-title2;
+        }
+
+        span {
+            color: $sub-clr;
+        }
+    }
+
+    .story-image {
+        position: relative;
+        margin-top: 4rem;
+        z-index: 2;
+    }
+}
