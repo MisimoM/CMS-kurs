@@ -13,8 +13,93 @@
 
 .card-team {
     @include card;
+    border: 1px solid $border-light;
 
     .card-text-holder {
         padding: 0.8rem 1.5rem;
+    }
+}
+
+.support-card {
+    background-color: $primary;
+    width: 80%;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+    border-radius: 3px;
+    position: relative;
+
+    h5, p {
+        color: $sub-clr2;
+    }
+
+    h5 {
+        margin-bottom: 0.5rem;
+    }
+
+    .input-holder {
+        display: flex;
+    }
+
+    input {
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+    }
+
+    .icon-holder {
+        border: 1px solid $border-light;
+        padding: 0.8rem 1rem 0.8rem 0.8rem;
+        border-radius: 3px;
+        background-color: $white;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+
+        i {
+            font-size: 16px;
+            color: $primary;
+            place-self: center;
+        }
+    }
+
+    .email-icon {
+        position: absolute;
+        right: 0;
+    }
+}
+
+.card-project {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    display: flex;
+    gap: 2rem;
+    border-top: 1px solid $border-light;
+
+    &:first-child {
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .card-content {
+        display: grid;
+
+        a {
+            align-self: flex-end;
+            color: $primary;
+        }
+
+        .fa-regular {
+            color: $sub-clr;
+            font-size: 15px;
+            padding-left: 0.3rem;
+            align-self: center;
+        }
+    }
+
+    .date-time {
+        display: flex;
+        gap: 0.3rem;
     }
 }

@@ -1,0 +1,60 @@
+﻿.contact-section {
+    background-color: $light-gray;
+    padding-bottom: 0;
+
+    .container {
+        display: flex;
+        gap: 10rem;
+    }
+
+    .container-left {
+        position: relative;
+    }
+
+    .bg-image {
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .contact-image {
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    .container-right {
+        width: 30%;
+        display: grid;
+        place-content: center;
+    }
+
+    .content-holder {
+        display: grid;
+        gap: 2rem;
+        padding-bottom: 6rem;
+    }
+
+    .wrapper {
+        display: flex;
+        gap: 0.5rem;
+
+        .text-sub-title4 {
+            padding-bottom: 0.5rem;
+        }
+
+        .number, .email {
+            font-style: italic;
+        }
+
+        .phone-icon {
+            transform: scaleX(-1);
+        }
+
+        i {
+            font-size: 18px;
+            color: $sub-clr;
+            padding-top: 0.1rem;
+        }
+    }
+}

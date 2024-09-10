@@ -7,9 +7,6 @@
     
     var signatureImage = Model?.Value<IPublishedContent>("aboutUsSignatureImage")?.Url() ?? "";
 
-    var cardTitles = Model.Value<IEnumerable<string>>("ourServicesCardTitles");
-    var cardImages = Model.Value<IEnumerable<IPublishedContent>>("ourServicesCardImages");
-
     var ourStoryBackgroundImage = Model?.Value<IPublishedContent>("ourStoryBackgroundImage")?.Url() ?? "";
     var ourStoryImage = Model?.Value<IPublishedContent>("ourStoryImage")?.Url() ?? "";
 
@@ -65,29 +62,7 @@
         </div>
     </section>
 
-    <section class="our-services-section">
-        <div class="container">
-            <div class="title-holder">
-                <h6 class="text-label">@Model.Value("ourServicesLabel")</h6>
-                <h2>@Model.Value("ourServicesHeadline")</h2>
-            </div>
-            <div class="grid-3col">
-                @if (cardTitles != null && cardImages != null)
-                {
-                    @foreach (var (title, image) in cardTitles.Zip(cardImages, (title, image) => (title, image)))
-                    {
-                        <a href="#">
-                            <div class="card-service">
-                                <h5>@title</h5>
-                                <img src="@image.Url()" alt="@title">
-                                <p>@Model.Value("ourServicesCardText")</p>
-                            </div>
-                        </a>
-                    }
-                }
-            </div>
-        </div>
-    </section>
+    @await Html.PartialAsync("Partials/static/ourServicesSection")
 
     <section class="our-story-section">
         <div class="container">
@@ -108,8 +83,8 @@
         <div class="container">
             <img class="bg-image" src="@successBgImage" alt="">
             <div class="title-holder">
-                <h6 class="text-label">SUCCESS STORIES</h6>
-                <h2>Success story</h2>
+                <h6 class="text-label">@Model.Value("successStoryLabel")</h6>
+                <h2>@Model.Value("successStoryTitle")</h2>
             </div>
             <div class="wrapper">
                 @if (successNumbers != null && successTexts != null)

@@ -13,9 +13,3 @@
         }
     }
 }
-
-@mixin container-center {
-    @include container;
-    display: grid;
-    justify-content: center;
-}

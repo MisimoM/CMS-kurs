@@ -1,0 +1,22 @@
+﻿.title-section {
+    padding: 0;
+    background-color: $light-gray;
+    position: relative;
+    height: 245px;
+
+    .bg-image {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

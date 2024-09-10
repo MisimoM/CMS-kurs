@@ -2,10 +2,12 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
 .grid-4col {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
 }

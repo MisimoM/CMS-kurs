@@ -1,0 +1,96 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks;
+@{
+	Layout = "mainLayout.cshtml";
+
+    var storyImage = Model?.Value<IPublishedContent>("storySectionImage")?.Url() ?? "";
+    var storyText = Model.Value<IEnumerable<string>>("storySectionText");
+
+    var reviewsBackGroundImage = Model?.Value<IPublishedContent>("reviewsSectionBackGroundImage")?.Url() ?? "";
+    var reviewsStarImage = Model?.Value<IPublishedContent>("reviewsSectionImage")?.Url() ?? "";
+
+    var cards = Model.Value<IEnumerable<BlockListItem>>("cardContent").Select(x => x.Content);
+
+    var firstGridBlocks = cards.Take(3);
+    var secondGridBlocks = cards.Skip(3).Take(4);    
+}
+
+@await Html.PartialAsync("Partials/static/titleSection")
+
+<section class="story-section">
+    <div class="container">
+        <div class="container-left">
+            <img src="@storyImage" alt="">
+            <p>@Model.Value("storySectionImageText")</p>
+        </div>
+        <div class="container-right">
+            <p class="text-quote">@Model.Value("storySectionQuote")</p>
+            @if (storyText is not null)
+            {
+                @foreach (var text in storyText)
+                {
+                    <p>@text</p>
+                }
+            }
+        </div>
+    </div>
+</section>
+
+<section class="reviews-section">
+    <img class="bg-image" src="@reviewsBackGroundImage" alt="">
+    <div class="container">
+        <div class="content-holder">
+            <div class="title-holder">
+                <h6 class="text-label">@Model.Value("reviewsSectionLabel")</h6>
+                <h2>@Model.Value("reviewsSectionTitle")</h2>
+            </div>
+            <p class="text-quote">@Model.Value("reviewsSectionText")</p>
+            <img src="@reviewsStarImage" alt="">
+            <div>
+                <p>@Model.Value("reviewsSectionReviewerName")</p>
+                <p>@Model.Value("reviewsSectionReviewerCompany")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+        <div class="title-holder">
+            <h6 class="text-label">OUR EXPERT</h6>
+            <h2>A team of professionals with years of experience</h2>
+        </div>
+        <div class="grid-3col">
+            @foreach (var card in firstGridBlocks)
+            {
+                var image = card.Value<IPublishedContent>("teamCardImage")?.Url();
+                
+                <div class="card-team">
+                    <img src="@image" alt="@card.Value("teamCardName")" />
+                    <div class="card-text-holder">
+                        <h6>@card.Value("teamCardName")</h6>
+                        <p>@card.Value("teamCardRole")</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="grid-4col">
+            @foreach (var card in secondGridBlocks)
+            {
+                var image = card.Value<IPublishedContent>("teamCardImage")?.Url();
+                
+                <div class="card-team">
+                    <img src="@image" alt="@card.Value("teamCardName")" />
+                    <div class="card-text-holder">
+                        <h6>@card.Value("teamCardName")</h6>
+                        <p>@card.Value("teamCardRole")</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("Partials/static/contactSection")

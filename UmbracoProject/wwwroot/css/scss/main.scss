@@ -12,6 +12,8 @@
 @import "components/cards";
 
 @import "layout/containers";
+@import "layout/contact-section";
+@import "layout/title-section";
 @import "layout/grids";
 @import "layout/footer";
 @import "layout/header";
@@ -22,6 +24,11 @@
 @import "pages/home/our-story";
 @import "pages/home/success-story";
 @import "pages/home/recent-projects";
+
+@import "pages/about";
+@import "pages/contact";
+@import "pages/services";
+@import "pages/projects";
 
 @import "vendors/umbraco-overrides";
 

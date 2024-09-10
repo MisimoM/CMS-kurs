@@ -1,0 +1,38 @@
+﻿.projects-section {
+
+    .container {
+        display: flex;
+        gap: 5rem;
+    }
+
+    .container-left {
+        width: 80%;
+        padding-bottom: 2rem;
+
+        .image-holder {
+            display: grid;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+    }
+
+    .container-right {
+        border-left: 1px solid $border-light;
+        width: 40%;
+        padding-left: 2rem;
+    }
+
+    .tag-holder {
+        width: 67%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .tag {
+        border: 1px solid $border-light;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+    }
+}

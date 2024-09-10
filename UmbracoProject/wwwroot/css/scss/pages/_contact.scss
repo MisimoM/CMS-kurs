@@ -1,0 +1,57 @@
+﻿.map {
+    padding-top: 0;
+
+    .wrapper {
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+        margin-top: 5rem;
+        position: relative;
+    }
+
+    .contact-form-holder {
+        position: absolute;
+        background-color: $white;
+        top: -36rem;
+        display: grid;
+        gap: 1rem;
+        text-align: center;
+        padding: 4rem;
+        box-shadow: 0px 0px 30px 0px rgba(219,219,219,1);
+        border-radius: 3px;
+    }
+
+    .title-holder, p {
+        width: 55%;
+        place-self: center;
+    }
+
+    form {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-areas:
+            "name-input phone" "email type" "button button";
+
+        .input-name {
+            grid-area: name-input;
+        }
+
+        .input-email {
+            grid-area: email;
+        }
+
+        .input-phone {
+            grid-area: phone;
+        }
+
+        .input-type {
+            grid-area: type;
+        }
+
+        button {
+            grid-area: button;
+            width: 20%;
+            place-self: center;
+        }
+    }
+}

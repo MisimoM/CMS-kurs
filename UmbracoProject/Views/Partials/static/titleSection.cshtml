@@ -1,0 +1,15 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var titleSectionBackgroundImage = Model?.Value<IPublishedContent>("titleSectionBackgroundImage")?.Url() ?? "";
+}
+
+<section class="title-section">
+    <img class="bg-image" src="@titleSectionBackgroundImage" alt="">
+    <div class="container">
+        <div>
+            <h2>@Model.Value("titleSectionTitle")</h2>
+            <p>Home > @Model.Value("titleSectionText")</p>
+        </div>
+    </div>
+</section>

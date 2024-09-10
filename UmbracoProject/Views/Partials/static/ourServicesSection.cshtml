@@ -1,0 +1,34 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters
+@{
+    var cardTitles = Model.Value<IEnumerable<string>>("ourServicesCardTitles");
+    var cardImages = Model.Value<IEnumerable<IPublishedContent>>("ourServicesCardImages");
+}
+
+<section class="our-services-section" style="background-color: @Model.Value("ourServicesBackgroundColor")">
+        <div class="container">
+            <div class="title-holder">
+                @if (@Model.HasValue("ourServicesLabel"))
+                {
+                    <h6 class="text-label">@Model.Value("ourServicesLabel")</h6>
+                }
+                <h2>@Model.Value("ourServicesTitle")</h2>
+            </div>
+            <div class="grid-3col">
+                @if (cardTitles is not null && cardImages is not null)
+                {
+                    @foreach (var (title, image) in cardTitles.Zip(cardImages, (title, image) => (title, image)))
+                    {
+                        <a href="#">
+                            <div class="card-service">
+                                <h5>@title</h5>
+                                <img src="@image.Url()" alt="@title">
+                                <p>@Model.Value("ourServicesCardText")</p>
+                            </div>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+    </section>

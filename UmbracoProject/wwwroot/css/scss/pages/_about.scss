@@ -1,0 +1,147 @@
+﻿.title-section {
+    padding: 0;
+    background-color: $light-gray;
+    position: relative;
+    height: 245px;
+
+    .bg-image {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.story-section {
+
+    .container {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .container-right {
+        width: 50%;
+        display: grid;
+        gap: 1.5rem;
+    }
+}
+
+.reviews-section {
+    background-color: $light-gray;
+    padding: 0;
+    position: relative;
+    height: 511px;
+
+    .bg-image {
+        position: absolute;
+        right: 0;
+        z-index: 1;
+    }
+
+    .container {
+        padding: 5rem 0;
+    }
+
+    .content-holder {
+        position: relative;
+        z-index: 2;
+        width: 45%;
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    h2 {
+        width: 60%;
+    }
+
+    .text-quote {
+        color: #999999;
+    }
+}
+
+.team-section {
+
+    .container {
+        display: grid;
+        place-items: center;
+    }
+
+    .title-holder {
+        text-align: center;
+        width: 40%;
+    }
+
+    .grid-3col {
+        padding: 2rem 0;
+    }
+}
+
+.contact-section {
+    background-color: $light-gray;
+    padding-bottom: 0;
+
+    .container {
+        display: flex;
+        gap: 10rem;
+    }
+
+    .container-left {
+        position: relative;
+    }
+
+    .bg-image {
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .contact-image {
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    .container-right {
+        width: 30%;
+        display: grid;
+        place-content: center;
+    }
+
+    .content-holder {
+        display: grid;
+        gap: 2rem;
+        padding-bottom: 6rem;
+    }
+
+    .wrapper {
+        display: flex;
+        gap: 0.5rem;
+
+        .text-sub-title4 {
+            padding-bottom: 0.5rem;
+        }
+
+        .number, .email {
+            font-style: italic;
+        }
+
+        .phone-icon {
+            transform: scaleX(-1);
+        }
+
+        i {
+            font-size: 18px;
+            color: $sub-clr;
+            padding-top: 0.1rem;
+        }
+    }
+}
