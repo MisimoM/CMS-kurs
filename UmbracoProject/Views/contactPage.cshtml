@@ -1,0 +1,39 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var companyImages = Model.Value<IEnumerable<IPublishedContent>>("mapSectionCompanyImages");
+}
+
+@await Html.PartialAsync("Partials/static/titleSection")
+
+@await Html.PartialAsync("Partials/static/contactSection")
+
+<section class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4070.3227284348054!2d18.049023795877325!3d59.330259745497244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d61b5b2a595%3A0xd9fa560691e12d7!2sKlarabergsviadukten%2090%2C%20111%2064%20Stockholm!5e0!3m2!1ssv!2sse!4v1725967885296!5m2!1ssv!2sse" width="100%" height="750" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="container wrapper">
+        @if (companyImages != null)
+        {
+            @foreach (var image in companyImages)
+            {
+                <img src="@image.Url()" alt="">
+            }
+        }
+        <div class="contact-form-holder">
+            <div class="title-holder">
+                <h6 class="text-label">@Model.Value("mapSectionContactFormLabel")</h6>
+                <h2>@Model.Value("mapSectionContactFormTitle")</h2>
+            </div>
+                <p>@Model.Value("mapSectionContactFormText")</p>
+                <form action="">
+                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Email Address">
+                    <input type="text" placeholder="Phone">
+                    <input type="text" value="Financial consulting" readonly>
+                    <button class="button-dark">@Model.Value("mapSectionContactFormButtonText")</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
