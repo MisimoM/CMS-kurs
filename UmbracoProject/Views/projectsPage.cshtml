@@ -1,0 +1,72 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.Blocks;
+@{
+	Layout = "mainLayout.cshtml";
+
+    var cards = Model.Value<IEnumerable<BlockListItem>>("projectSectionCardContent").Select(x => x.Content);
+
+    var tags = Model.Value<IEnumerable<string>>("projectSectionTags");
+
+    var emailIconBackgroundImage = Model?.Value<IPublishedContent>("projectSectionSupportBackgroundImage")?.Url() ?? "";
+}
+
+@await Html.PartialAsync("Partials/static/titleSection")
+
+<section class="projects-section">
+        <div class="container">
+            <div class="container-left">
+                <div>
+                    @foreach (var card in cards)
+                    {
+                        var image = card.Value<IPublishedContent>("projectCardImage")?.Url();
+                        
+                        <div class="card-project">
+                            <img src="@image" alt="">
+                            <div class="card-content">
+                                <div>
+                                    <h5>@card.Value("projectCardTitle")</h5>
+                                    <div class="date-time">
+                                        <i class="@Model.Value("projectSectionCardCalendarIcon")"></i>
+                                        <p class="text-note1">@card.Value("projectCardDate")</p>
+                                    </div>
+                                </div>
+                                <p>@Model.Value("projectSectionCardText")</p>
+                                <a href="">@Model.Value("projectSectionCardLinkText") <i class="@Model.Value("projectSectionCardLinkArrow")"></i></a>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="image-holder">
+                    <img class="pagination" src="images/Paging.svg" alt="">
+                </div>
+            </div>
+           
+            <div class="container-right">
+                <h5>@Model.Value("projectSectionTagTitle")</h5>
+                <div class="tag-holder">
+                    @{
+                        foreach(var tag in tags)
+                        {
+                            <p class="tag">@tag</p>
+                        }
+                    }
+                </div>
+                <div class="support-card">
+                    <div>
+                        <h5>@Model.Value("projectSectionSupportTitle")</h5>
+                        <p>@Model.Value("projectSectionSupportText")</p>
+                    </div>
+                    <div class="input-holder">
+                        <input type="text" placeholder="@Model.Value("projectSectionSupportInputPlaceholder")">
+                        <div class="icon-holder">
+                            <i class="@Model.Value("projectSectionSupportInputIcon")"></i>
+                        </div>
+                    </div>
+                    <img class="email-icon" src="@emailIconBackgroundImage" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+@await Html.PartialAsync("Partials/static/contactSection")

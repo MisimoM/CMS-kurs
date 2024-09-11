@@ -1,34 +1,39 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @using Umbraco.Cms.Core.PropertyEditors.ValueConverters
+@using Umbraco.Cms.Core.Models.Blocks;
 @{
-    var cardTitles = Model.Value<IEnumerable<string>>("ourServicesCardTitles");
-    var cardImages = Model.Value<IEnumerable<IPublishedContent>>("ourServicesCardImages");
+    var cards = Model.Value<IEnumerable<BlockListItem>>("serviceSectionCardContent").Select(x => x.Content);
+    var paginationImage = Model?.Value<IPublishedContent>("serviceSectionPaginationImage")?.Url() ?? "";
+    
 }
 
-<section class="our-services-section" style="background-color: @Model.Value("ourServicesBackgroundColor")">
+<section class="our-services-section" style="background-color: @Model.Value("serviceSectionBackgroundColor")">
         <div class="container">
             <div class="title-holder">
-                @if (@Model.HasValue("ourServicesLabel"))
+                @if (@Model.HasValue("serviceSectionLabel"))
                 {
-                    <h6 class="text-label">@Model.Value("ourServicesLabel")</h6>
+                    <h6 class="text-label">@Model.Value("serviceSectionLabel")</h6>
                 }
-                <h2>@Model.Value("ourServicesTitle")</h2>
+                <h2>@Model.Value("serviceSectionTitle")</h2>
             </div>
             <div class="grid-3col">
-                @if (cardTitles is not null && cardImages is not null)
+                @foreach (var card in cards)
                 {
-                    @foreach (var (title, image) in cardTitles.Zip(cardImages, (title, image) => (title, image)))
-                    {
-                        <a href="#">
-                            <div class="card-service">
-                                <h5>@title</h5>
-                                <img src="@image.Url()" alt="@title">
-                                <p>@Model.Value("ourServicesCardText")</p>
-                            </div>
-                        </a>
-                    }
+                    var image = card.Value<IPublishedContent>("serviceCardImage")?.Url();
+                    
+                    <a href="#">
+                        <div class="card-service">
+                            <h5>@card.Value("serviceCardTitle")</h5>
+                            <img src="@image" alt="">
+                            <p>@Model.Value("serviceSectionCardText")</p>
+                        </div>
+                    </a>
                 }
             </div>
+            @if (@Model.HasValue("serviceSectionPaginationImage"))
+            {
+                <img class="pagination" src="@paginationImage" />
+            }
         </div>
     </section>

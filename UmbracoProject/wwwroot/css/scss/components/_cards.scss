@@ -1,6 +1,7 @@
 ﻿.card-service {
     @include card;
     transition: 250ms ease-in-out;
+    border: 1px solid $border-light;
 
     h5, p {
         padding: 1.5rem;

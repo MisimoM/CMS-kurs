@@ -11,7 +11,7 @@
     var reviewsBackGroundImage = Model?.Value<IPublishedContent>("reviewsSectionBackGroundImage")?.Url() ?? "";
     var reviewsStarImage = Model?.Value<IPublishedContent>("reviewsSectionImage")?.Url() ?? "";
 
-    var cards = Model.Value<IEnumerable<BlockListItem>>("cardContent").Select(x => x.Content);
+    var cards = Model.Value<IEnumerable<BlockListItem>>("teamSectionCardContent").Select(x => x.Content);
 
     var firstGridBlocks = cards.Take(3);
     var secondGridBlocks = cards.Skip(3).Take(4);    
