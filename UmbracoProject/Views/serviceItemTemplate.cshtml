@@ -1,0 +1,51 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var aboutImage = Model?.Value<IPublishedContent>("serviceContentSectionAboutImage")?.Url() ?? "";
+    var supportImage = Model?.Value<IPublishedContent>("serviceContentSectionSupportImage")?.Url() ?? "";
+}
+
+@await Html.PartialAsync("Partials/static/titleSection")
+
+<section class="services-details">
+    <div class="container">
+        <div class="content-container">
+            <div class="container-left">
+                <div class="content-left">
+                    <h4>About us</h4>
+                <div class="about-us-card">
+                    <img src="@aboutImage" alt="">
+                    <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+                </div>
+                <div class="support-card">
+                    <div>
+                        <h5>How can we help you?</h5>
+                        <p>online support 24/7, we are here to help you</p>
+                    </div>
+                    <div class="input-holder">
+                        <input type="text" placeholder="Email address">
+                        <div class="icon-holder">
+                            <i class="fa-light fa-envelope"></i>
+                        </div>
+                    </div>
+                    <img class="email-icon" src="@supportImage" alt="">
+                </div>
+                </div>
+            </div>
+			<div class="container-right">
+				@Model.Value("contentRight")
+			</div>
+        </div>
+		<form class="service-form" action="">
+            <h4 id="title">Have a question?</h4>
+            <input id="name" type="text" placeholder="Name">
+            <input id="email" type="text" placeholder="Email">
+            <textarea id="question" placeholder="Question"></textarea>
+            <button class="button-dark">Submit</button>
+        </form>
+    </div>
+</section>
+
+@await Html.PartialAsync("Partials/static/contactSection")

@@ -9,31 +9,31 @@
 }
 
 <section class="our-services-section" style="background-color: @Model.Value("serviceSectionBackgroundColor")">
-        <div class="container">
-            <div class="title-holder">
-                @if (@Model.HasValue("serviceSectionLabel"))
-                {
-                    <h6 class="text-label">@Model.Value("serviceSectionLabel")</h6>
-                }
-                <h2>@Model.Value("serviceSectionTitle")</h2>
-            </div>
-            <div class="grid-3col">
-                @foreach (var card in cards)
-                {
-                    var image = card.Value<IPublishedContent>("serviceCardImage")?.Url();
-                    
-                    <a href="#">
-                        <div class="card-service">
-                            <h5>@card.Value("serviceCardTitle")</h5>
-                            <img src="@image" alt="">
-                            <p>@Model.Value("serviceSectionCardText")</p>
-                        </div>
-                    </a>
-                }
-            </div>
-            @if (@Model.HasValue("serviceSectionPaginationImage"))
+    <div class="container">
+        <div class="title-holder">
+            @if (@Model.HasValue("serviceSectionLabel"))
             {
-                <img class="pagination" src="@paginationImage" />
+                <h6 class="text-label">@Model.Value("serviceSectionLabel")</h6>
+            }
+            <h2>@Model.Value("serviceSectionTitle")</h2>
+        </div>
+        <div class="grid-3col">
+            @foreach (var card in cards)
+            {
+                var image = card.Value<IPublishedContent>("serviceCardImage")?.Url();
+                    
+                <a href="@card.Value("serviceCardLink")">
+                    <div class="card-service">
+                        <h5>@card.Value("serviceCardTitle")</h5>
+                        <img src="@image" alt="">
+                        <p>@Model.Value("serviceSectionCardText")</p>
+                    </div>
+                </a>
             }
         </div>
-    </section>
+        @if (@Model.HasValue("serviceSectionPaginationImage"))
+        {
+            <img class="pagination" src="@paginationImage" />
+        }
+    </div>
+</section>

@@ -29,7 +29,7 @@ h6, .h6 {
     @include font-heading6
 }
 
-p {
+p, ul, a {
     @include font-body-text
 }
 

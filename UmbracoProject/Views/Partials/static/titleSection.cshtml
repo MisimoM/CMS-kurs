@@ -9,7 +9,16 @@
     <div class="container">
         <div>
             <h2>@Model.Value("titleSectionTitle")</h2>
-            <p>Home > @Model.Value("titleSectionText")</p>
+            <div class="link-holder">
+                <a href="/home">Home</a>
+                <p>></p>
+                <a href="@Model.Value("titleSectionLinkUrl")"><p>@Model.Value("titleSectionLinkText")</p></a>
+                @if(Model.HasValue("titleSectionChildText"))
+                {
+                    <p>></p>
+                    <p>@Model.Value("titleSectionChildText")</p>
+                }
+            </div>
         </div>
     </div>
 </section>

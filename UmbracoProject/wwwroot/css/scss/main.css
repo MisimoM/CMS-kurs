@@ -9,13 +9,9 @@ body {
   overflow-x: hidden;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ul, li, figure {
+body, h1, h2, h3, h4, h5, h6, p, figure {
   margin: 0;
   padding: 0;
-}
-
-ul {
-  list-style: none;
 }
 
 a {
@@ -74,7 +70,7 @@ h6, .h6 {
   color: #4F5955;
 }
 
-p {
+p, ul, a {
   font-size: 14px;
   font-weight: 400;
   color: #535656;
@@ -392,7 +388,11 @@ section {
   display: grid;
   justify-content: center;
   align-items: center;
-  text-align: center;
+}
+.title-section .link-holder {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
 }
 
 .grid-3col {
@@ -814,6 +814,66 @@ header nav {
 .our-services-section .pagination {
   margin-top: 2rem;
   place-self: center;
+}
+
+.services-details .content-container {
+  display: flex;
+  gap: 2rem;
+}
+.services-details .container-left {
+  width: 24%;
+}
+.services-details .support-card {
+  width: 100%;
+}
+.services-details .about-us-card {
+  margin-top: 1rem;
+}
+.services-details .about-us-card img {
+  width: 100%;
+}
+.services-details .container-right {
+  width: 70%;
+  padding-left: 2rem;
+  border-left: 1px solid #EBEBEB;
+}
+.services-details .container-right img {
+  width: 100%;
+}
+.services-details .container-right li {
+  margin: 0.5rem 0;
+}
+.services-details .container-right li::marker {
+  color: #D9C3A9;
+}
+.services-details .service-text-holder {
+  margin: 1rem 0;
+}
+.services-details .service-text-holder p {
+  padding: 0.3rem 0;
+}
+.services-details .service-form {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas: "title title" "name_ email" "question question" "btn btn";
+}
+.services-details .service-form #title {
+  grid-area: title;
+}
+.services-details .service-form #name {
+  grid-area: name_;
+}
+.services-details .service-form #email {
+  grid-area: email;
+}
+.services-details .service-form #question {
+  grid-area: question;
+  height: 10rem;
+}
+.services-details .service-form button {
+  grid-area: btn;
+  width: 15%;
 }
 
 .projects-section .container {

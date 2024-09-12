@@ -17,6 +17,11 @@
         display: grid;
         justify-content: center;
         align-items: center;
-        text-align: center;
+    }
+
+    .link-holder {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
     }
 }

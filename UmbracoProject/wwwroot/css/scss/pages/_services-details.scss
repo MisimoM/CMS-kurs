@@ -1,0 +1,82 @@
+﻿.services-details {
+
+    .content-container {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .container-left {
+        width: 24%;
+    }
+
+    .support-card {
+        width: 100%;
+    }
+
+    .about-us-card {
+        margin-top: 1rem;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .container-right {
+        width: 70%;
+        padding-left: 2rem;
+        border-left: 1px solid $border-light;
+
+        img {
+            width: 100%;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        li::marker {
+            color: $sub-clr;
+        }
+    }
+
+    .service-text-holder {
+        margin: 1rem 0;
+
+        p {
+            padding: 0.3rem 0;
+        }
+    }
+
+    .service-form {
+        margin-top: 2rem;
+        display: grid;
+        gap: 1.5rem;
+        grid-template-areas:
+            "title title"
+            "name_ email"
+            "question question"
+            "btn btn";
+
+        #title {
+            grid-area: title;
+        }
+
+        #name {
+            grid-area: name_;
+        }
+
+        #email {
+            grid-area: email;
+        }
+
+        #question {
+            grid-area: question;
+            height: 10rem;
+        }
+
+        button {
+            grid-area: btn;
+            width: 15%;
+        }
+    }
+}
