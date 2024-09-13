@@ -642,6 +642,77 @@ header nav {
   margin-top: 5rem;
 }
 
+.project-details-section .container {
+  display: flex;
+  gap: 5rem;
+}
+.project-details-section .container-left {
+  width: 80%;
+}
+.project-details-section .container-left h6 {
+  margin: 1rem 0;
+}
+.project-details-section .container-left img {
+  width: 100%;
+}
+.project-details-section .container-left li {
+  margin: 0.5rem 0;
+}
+.project-details-section .container-left li::marker {
+  color: #D9C3A9;
+}
+.project-details-section .project-text-holder {
+  margin: 1rem 0;
+}
+.project-details-section .project-text-holder p {
+  padding: 0.3rem 0;
+}
+.project-details-section .date-time {
+  display: flex;
+  gap: 0.3rem;
+}
+.project-details-section .content-holder {
+  display: flex;
+  gap: 1rem;
+}
+.project-details-section .content-holder .img-holder {
+  width: 100%;
+}
+.project-details-section .content-holder .project-text-holder {
+  margin: 0;
+}
+.project-details-section .content-holder .project-text-holder p {
+  padding: 0.3rem 0;
+}
+.project-details-section .project-details-tags {
+  display: flex;
+  gap: 0.5rem;
+}
+.project-details-section .project-details-tags p {
+  border: 1px solid #EBEBEB;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  align-self: center;
+  background-color: #F2EDDC;
+}
+.project-details-section .container-right {
+  border-left: 1px solid #EBEBEB;
+  width: 40%;
+  padding-left: 2rem;
+}
+.project-details-section .tag-holder {
+  width: 67%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.project-details-section .tag {
+  border: 1px solid #EBEBEB;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+}
+
 .title-section {
   padding: 0;
   background-color: #F7F7F7;

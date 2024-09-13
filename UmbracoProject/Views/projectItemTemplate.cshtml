@@ -1,0 +1,48 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var supportImage = Model?.Value<IPublishedContent>("projectContentSectionSupportImage")?.Url() ?? "";
+    var tags = Model.Value<IEnumerable<string>>("projectContentSectionTags");
+}
+
+@await Html.PartialAsync("Partials/static/titleSection")
+
+<section class="project-details-section">
+    <div class="container">
+        <div class="container-left">
+            <div class="date-time">
+                <i class="fa-duotone fa-solid fa-calendar-days"></i>
+                <p class="text-note1">June 15, 2024</p>
+            </div>
+            @Model.Value("contentLeft")
+		</div>
+		<div class="container-right">
+			<h5>@Model.Value("projectContentSectionTagTitle")</h5>
+            <div class="tag-holder">
+                @{
+                    foreach(var tag in tags)
+                    {
+                        <p class="tag">@tag</p>
+                    }
+                }
+            </div>
+			<div class="support-card">
+                <div>
+                    <h5>How can we help you?</h5>
+                    <p>online support 24/7, we are here to help you</p>
+                </div>
+                <div class="input-holder">
+                    <input type="text" placeholder="Email address">
+                    <div class="icon-holder">
+                        <i class="fa-light fa-envelope"></i>
+                    </div>
+                </div>
+            	<img class="email-icon" src="@supportImage" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("Partials/static/contactSection")

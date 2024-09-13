@@ -21,7 +21,8 @@
                     {
                         var image = card.Value<IPublishedContent>("projectCardImage")?.Url();
                         
-                        <div class="card-project">
+                        <a href="@card.Value("projectCardLinkUrl")">
+                            <div class="card-project">
                             <img src="@image" alt="">
                             <div class="card-content">
                                 <div>
@@ -32,9 +33,10 @@
                                     </div>
                                 </div>
                                 <p>@Model.Value("projectSectionCardText")</p>
-                                <a href="">@Model.Value("projectSectionCardLinkText") <i class="@Model.Value("projectSectionCardLinkArrow")"></i></a>
+                                <div>@Model.Value("projectSectionCardLinkText") <i class="@Model.Value("projectSectionCardLinkArrow")"></i></div>
                             </div>
-                        </div>
+                            </div>
+                        </a>
                     }
                 </div>
                 <div class="image-holder">
