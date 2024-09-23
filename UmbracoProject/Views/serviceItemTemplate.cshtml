@@ -38,12 +38,21 @@
 				@Model.Value("contentRight")
 			</div>
         </div>
-		<form class="service-form" action="">
+		<form id="serviceForm" class="service-form">
             <h4 id="title">Have a question?</h4>
-            <input id="name" type="text" placeholder="Name">
-            <input id="email" type="text" placeholder="Email">
-            <textarea id="question" placeholder="Question"></textarea>
-            <button class="button-dark">Submit</button>
+            <div class="name-holder">
+                <input id="input-name" type="text" placeholder="Name">
+                <span id="input-name-message"></span>
+            </div>
+            <div class="email-holder">
+                <input id="input-email" type="text" placeholder="Email">
+                <span id="input-email-message"></span>
+            </div>
+            <div class="question-holder">
+                <textarea id="input-question" placeholder="Question"></textarea>
+                <span id="input-question-message"></span>
+            </div>
+            <button class="button-dark" type="submit">Submit</button>
         </form>
     </div>
 </section>

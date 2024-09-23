@@ -61,17 +61,20 @@
             grid-area: title;
         }
 
-        #name {
+        .name-holder {
             grid-area: name_;
         }
 
-        #email {
+        .email-holder {
             grid-area: email;
         }
 
-        #question {
+        .question-holder {
             grid-area: question;
-            height: 10rem;
+
+            textarea {
+                height: 10rem;
+            }
         }
 
         button {

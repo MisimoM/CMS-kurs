@@ -160,7 +160,8 @@ p, ul, a {
   color: #F2EDDC;
 }
 
-input, textarea {
+input, textarea, select {
+  width: 100%;
   font-family: "Poppins", sans-serif;
   font-size: 13px;
   border: 1px solid #EBEBEB;
@@ -169,9 +170,25 @@ input, textarea {
   border-radius: 3px;
   resize: none;
 }
-input::placeholder, textarea::placeholder {
+input::placeholder, textarea::placeholder, select::placeholder {
   color: #9C9EA6;
   font-style: italic;
+}
+
+form span {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: #E32626;
+  text-align: start;
+}
+
+.input-error {
+  border: 1px solid #E32626;
+}
+
+.input-valid {
+  border: 1px solid rgb(30, 196, 33);
 }
 
 .nav-link {
@@ -932,14 +949,16 @@ header nav {
 .services-details .service-form #title {
   grid-area: title;
 }
-.services-details .service-form #name {
+.services-details .service-form .name-holder {
   grid-area: name_;
 }
-.services-details .service-form #email {
+.services-details .service-form .email-holder {
   grid-area: email;
 }
-.services-details .service-form #question {
+.services-details .service-form .question-holder {
   grid-area: question;
+}
+.services-details .service-form .question-holder textarea {
   height: 10rem;
 }
 .services-details .service-form button {

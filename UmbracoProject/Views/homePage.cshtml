@@ -50,13 +50,29 @@
                     <h3>@Model.Value("aboutUsFormTitle")</h3>
                 </div>
                 <div class="form-body">
-                    <form action="">
-                        <p>@Model.Value("aboutUsFormText")</p>
-                        <input type="text" placeholder="@Model.Value("aboutUsFormInputName")">
-                        <input type="text" placeholder="@Model.Value("aboutUsFormInputEmail")">
-                        <input type="text" placeholder="@Model.Value("aboutUsFormInputPhone")">
-                        <input type="text" value="@Model.Value("aboutUsFormInputType")" readonly>
-                        <button class="button-light">@Model.Value("aboutUsFormButtonText")</button>
+                    <form id="contactForm">
+                        <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
+                        <div>
+                            <input id="input-name" type="text" placeholder="Name" name="name">
+                            <span id="input-name-message"></span>
+                        </div>
+                        <div>
+                            <input id="input-email" type="text" placeholder="Email Address" name="email">
+                            <span id="input-email-message"></span>
+                        </div>
+                        <div>
+                            <input id="input-phone" type="text" placeholder="Phone" name="phone">
+                            <span id="input-phone-message"></span>
+                        </div>
+                        
+                        <select id="input-type" name="service-type">
+                            <option value="financial-consulting">Financial Consulting</option>
+                            <option value="business-strategy">Business Strategy</option>
+                            <option value="marketing-advice">Marketing Advice</option>
+                            <option value="legal-support">Legal Support</option>
+                        </select>
+                        
+                        <button class="button-light" type="submit">Submit</button>
                     </form>
                 </div>
             </div>
