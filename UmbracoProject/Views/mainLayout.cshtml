@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="/css/scss/main.min.css">
     <title>Document</title>
 </head>
-@await Html.PartialAsync("Partials/static/header")
 <body>
-	@RenderBody()
-<script src="/scripts/contactFormValidation.js"></script>
-<script src="/scripts/serviceFormValidation.js"></script>
+    @await Html.PartialAsync("Partials/static/header")
+    <main>
+	    @RenderBody()
+    </main>
+    @await Html.PartialAsync("Partials/static/footer")
 </body>
-@await Html.PartialAsync("Partials/static/footer")
 </html>
